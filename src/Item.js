@@ -1,0 +1,16 @@
+export default function Item({ item, onDeleteItems, onToogleItems }) {
+  console.log(item);
+  return (
+    <li>
+      <input
+        type="checkbox"
+        value={item.packed}
+        onChange={() => onToogleItems(item.id)}
+      />
+      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+        {item.count} {item.description}{" "}
+      </span>
+      <button onClick={() => onDeleteItems(item.id)}>❌</button>
+    </li>
+  );
+}
